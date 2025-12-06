@@ -30,6 +30,7 @@ def make_model(
     device_map=None,
     # gptqmodel only
     gptqmodel_backend: str = "auto",
+    gpu_memory_utilization: float = 0.8,
     gguf_file: str = None,
     **kwargs,
 ) -> DecoderBase:
@@ -49,6 +50,7 @@ def make_model(
             enable_prefix_caching=enable_prefix_caching,
             enable_chunked_prefill=enable_chunked_prefill,
             dtype=dtype,
+            gpu_memory_utilization=gpu_memory_utilization,
             gguf_file=gguf_file,
         )
     elif backend == "hf":
