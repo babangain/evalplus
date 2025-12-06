@@ -142,7 +142,6 @@ def evaluate(
     num_ctx: Optional[int] = None,
     **model_kwargs,
 ):
-    print(**model_kwargs)
     if model_kwargs:
         # To suppress the warning of tokenizers
         os.environ["TOKENIZERS_PARALLELISM"] = os.environ.get(
