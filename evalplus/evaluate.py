@@ -136,11 +136,11 @@ def evaluate(
     mini: bool = False,
     noextreme: bool = False,
     version: str = "default",
+    gpu_memory_utilization:  Optional[float]  = 0.8,
     output_file: Optional[str] = None,
     gguf_file: Optional[str] = None,
     num_ctx: Optional[int] = None,
     num_ctx: Optional[int] = None,
-    gpu_memory_utilization[float] = 0.8,
     **model_kwargs,
 ):
     print(**model_kwargs)
