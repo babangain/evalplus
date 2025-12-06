@@ -139,8 +139,11 @@ def evaluate(
     output_file: Optional[str] = None,
     gguf_file: Optional[str] = None,
     num_ctx: Optional[int] = None,
+    num_ctx: Optional[int] = None,
+    gpu_memory_utilization[float] = 0.8,
     **model_kwargs,
 ):
+    print(**model_kwargs)
     if model_kwargs:
         # To suppress the warning of tokenizers
         os.environ["TOKENIZERS_PARALLELISM"] = os.environ.get(
@@ -151,6 +154,7 @@ def evaluate(
             dataset=dataset,
             gguf_file=gguf_file,
             num_ctx=num_ctx,
+            gpu_memory_utilization=gpu_memory_utilization,
             **model_kwargs,
         )
     assert samples is not None, "No samples provided"
