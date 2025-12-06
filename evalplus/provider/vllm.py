@@ -20,6 +20,7 @@ class VllmDecoder(DecoderBase):
         enable_prefix_caching=False,
         enable_chunked_prefill=False,
         gguf_file: str = None,
+        gpu_memory_utilization: float = 0.8,
         **kwargs
     ) -> None:
         super().__init__(name, **kwargs)
@@ -30,6 +31,7 @@ class VllmDecoder(DecoderBase):
             "trust_remote_code": self.trust_remote_code,
             "enable_prefix_caching": enable_prefix_caching,
             "enable_chunked_prefill": enable_chunked_prefill,
+            "gpu_memory_utilization" : gpu_memory_utilization,
         }
 
         self.force_base_prompt = force_base_prompt
