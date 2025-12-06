@@ -140,7 +140,6 @@ def evaluate(
     output_file: Optional[str] = None,
     gguf_file: Optional[str] = None,
     num_ctx: Optional[int] = None,
-    num_ctx: Optional[int] = None,
     **model_kwargs,
 ):
     print(**model_kwargs)
