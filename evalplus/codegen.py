@@ -141,6 +141,7 @@ def run_codegen(
     enable_chunked_prefill: bool = False,
     dtype: str = "bfloat16",
     gptqmodel_backend: str = "auto",  # For GPTQModel
+    gpu_memory_utilization: float = 0.8,
     gguf_file: Optional[str] = None,
     **kwargs,
 ):
@@ -253,6 +254,7 @@ def run_codegen(
         dtype=dtype,
         gptqmodel_backend=gptqmodel_backend,
         gguf_file=gguf_file,
+        gpu_memory_utilization=gpu_memory_utilization,
         **kwargs,
     )
 
@@ -282,3 +284,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
